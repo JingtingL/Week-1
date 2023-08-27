@@ -14,3 +14,18 @@ int main() {
     }
 }
 
+//Exercise 2
+#include "mbed.h"
+
+AnalogIn anInput(p15);
+DigitalOut led(LED1);
+
+int main() {
+    while (1) {
+        led = anInput;
+        printf("Blink! LED is now %d\n", led.read());
+
+        wait_ms(2000);
+    }
+}
+
